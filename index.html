@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1643/1643231.png" type="image/png">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s, color 0.5s;
+            margin: 0;
+            height: 100vh;
+            scroll-snap-type: y mandatory;
+            overflow-y: scroll;
+        }
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+        .section {
+            margin: 0;
+            padding: 20px;
+            border: 1px solid #444;
+            border-radius: 8px;
+            text-align: center;
+            height: 100vh; 
+            scroll-snap-align: start;
+        }
+        .toggle-switch {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            width: 60px; 
+            height: 30px; 
+            cursor: pointer;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        label {
+            width: 100%; 
+            height: 100%; 
+            position: relative;
+            display: block;
+            background: #ebebeb;
+            border-radius: 30px; 
+            box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+            transition: background 0.3s;
+        }
+        label:after {
+            content: "";
+            width: 26px; 
+            height: 26px; 
+            position: absolute;
+            top: 2px; 
+            left: 2px; 
+            background: yellow; 
+            border-radius: 50%; 
+            box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+            transition: left 0.3s, background 0.3s; 
+        }
+        input:checked + label {
+            background: #242424; 
+        }
+        input:checked + label:after {
+            left: 32px; 
+            background: black; 
+        }
+        h2 {
+            margin-bottom: 20px; 
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: transparent; 
+        }
+       
+        #article1 h2{
+            padding-top: 23px;
+        }
+        
+        #article1 img {
+            width: 1000px; 
+            max-width: 100%; 
+            border-radius: 10%;
+        }
+        #article1 p {
+            font-size: 19px; 
+            line-height: 1.6; 
+        }
+        #article1 table {
+            font-size: 18px; 
+        }
+       
+        #article2 h2{
+            padding-top: 50px;
+        }
+
+        #article2 img {
+            width: 380px; 
+            max-width: 100%; 
+            border-radius: 10%;
+        }
+        #article2 p {
+            font-size: 19px;
+            line-height: 1.6; 
+        }
+        #article2 table {
+            font-size: 19px; 
+        }
+        
+        #article3 h2{
+            padding-top: 50px;
+        }
+        #article3 img {
+            width: 300px; 
+            max-width: 100%;
+            border-radius: 10%; 
+        }
+        #article3 p {
+            font-size: 19px; 
+            line-height: 1.6; 
+        }
+        #article3 table {
+            font-size: 25px; 
+        }
+       
+        .light-mode th {
+            background-color: transparent; 
+        }
+        
+        img {
+            font-size: 100px; 
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-switch">
+        <input type="checkbox" id="darkmode-toggle" onclick="toggleMode()">
+        <label for="darkmode-toggle"></label>
+    </div>
+
+    <div class="section" id="article1">
+        <h2>Exams</h2>
+        <img src="img/article2.jpg" alt="Taking Exam" style="display: block; margin: 0 auto;">
+        <p>Preparing for exams is crucial for success in academic assessments. It helps students develop a deep understanding of the subject, enabling them to recall information more effectively during the exam. Early preparation reduces stress and increases confidence, allowing students to approach exams with a calm and focused mindset. Practice tests can provide insight into knowledge gaps, highlighting areas that require further attention. Consistency is key to mastering difficult topics, as repeated exposure helps reinforce learning. Additionally, organizing study material into manageable sections makes the preparation process more efficient. Utilizing study groups can also foster collaboration and new perspectives, enriching the learning experience. Ultimately, a well-structured study plan, combined with discipline and perseverance, greatly enhances the likelihood of achieving high scores.</p>
+        <table>
+            <tr>
+                <th>Tips</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Prepare Early</td>
+                <td>Start studying well in advance.</td>
+            </tr>
+            <tr>
+                <td>Practice Tests</td>
+                <td>Use practice tests to gauge knowledge.</td>
+            </tr>
+            <tr>
+                <td>Stay Organized</td>
+                <td>Keep study materials and notes in order to find information quickly.</td>
+            </tr>
+            <tr>
+                <td>Take Breaks</td>
+                <td>Incorporate short breaks during study sessions to maintain focus.</td>
+            </tr>
+            <tr>
+                <td>Seek Help</td>
+                <td>Don't hesitate to ask teachers or peers for clarification on difficult topics.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section" id="article2">
+        <h2>Dance Practice</h2>
+        <img src="img/article1.jpg" alt="Practicing Dancing" width="300" style="display: block; margin: 0 auto;">
+        <p>Dance practice helps improve coordination and rhythm, laying the foundation for mastering various styles. Consistent practice enables dancers to perfect their moves by building muscle memory and enhancing precision. Over time, the body becomes more flexible and responsive, allowing for smoother transitions and more expressive performances. Each dance style demands different skills and dedication, whether it’s the grace of ballet or the energy of hip hop. Regular practice ensures steady progress in skill development, as dancers gradually improve their technique and stamina. Moreover, practicing in front of mirrors helps dancers refine their posture and form. Setting achievable goals also motivates dancers to stay committed and track their improvements. Ultimately, dedication and passion are the driving forces behind true mastery in any dance form.</p>
+        <table>
+            <tr>
+                <th>Style</th>
+                <th>Practice Time</th>
+            </tr>
+            <tr>
+                <td>Ballet</td>
+                <td>20 minutes</td>
+            </tr>
+            <tr>
+                <td>Hip Hop</td>
+                <td>40 minutes</td>
+            </tr>
+            <tr>
+                <td>Contemporary</td>
+                <td>30 minutes</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section" id="article3">
+        <h2>Basketball Practice</h2>
+        <img src="img/article3.jpg" alt="Practicing Basketball" width="300" style="display: block; margin: 0 auto;">
+        <p>Regular basketball practice enhances skills and teamwork, essential components for success on the court. Each drill targets a specific aspect of the game, ensuring well-rounded development. Shooting drills improve accuracy, helping players refine their technique and consistency. Defensive drills build stamina and resilience, preparing players for high-intensity moments in a game. Continuous practice leads to improvement in all areas, from ball handling to strategic positioning. Teamwork during practice fosters better coordination on the court, as players learn to anticipate each other’s movements and communicate effectively. Scrimmages provide valuable opportunities to apply learned skills in game-like scenarios, sharpening decision-making and adaptability. Ultimately, disciplined practice cultivates a strong sense of teamwork, enabling players to perform cohesively during matches.</p>
+        <table>
+            <tr>
+                <th>Skill</th>
+                <th>Practice Focus</th>
+            </tr>
+            <tr>
+                <td>Shooting</td>
+                <td>Technique</td>
+            </tr>
+            <tr>
+                <td>Defense</td>
+                <td>Stamina</td>
+            </tr>
+            <tr>
+                <td>Passing</td>
+                <td>Accuracy</td>
+            </tr>
+            <tr></tr>
+                <td>Dribbling</td>
+                <td>Handling</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle('light-mode');
+        }
+    </script>
+</body>
+</html>
